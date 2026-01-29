@@ -1,15 +1,60 @@
-body{
+/* Corps de page */
+body {
    background-image: linear-gradient(to right, rgb(0, 4, 255), rgb(255, 0, 0), rgb(82, 1, 159));
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 }
 
+/* Conteneur principal */
 #main {
-   background-image: linear-gradient(to top, rgba(0,255,0,0.2), rgba(100,100,100,0.2),rgba(0, 255, 0,0.2));
-   width: 50%;
-   margin: 0 auto;
-   padding: 20px;
+   background-color: rgba(0, 0, 0, 0.6);
+      /* noir transparent */
+      width: 60%;
+      max-width: 900px;
+      padding: 30px 40px;
    border-radius: 20px;
+   box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(5px);
+      /* flouté derrière */
+      text-align: center;
 }
 
-p{
-   font-weight: bold;
+/* Titres */
+h1 {
+   font-size: 2.5em;
+   margin-bottom: 10px;
+   color: #00ff99;
+   text-shadow: 1px 1px 5px black;
+}
+
+h3 {
+   margin-top: 30px;
+   color: #ffcc00;
+}
+
+h4 {
+   color: #ff6666;
+}
+
+/* Paragraphes */
+p {
+   font-weight: 500;
+   line-height: 1.6;
+   margin: 10px 0;
+}
+
+/* Lien */
+a {
+   color: #00ffff;
+   text-decoration: none;
+}
+
+a:hover {
+   text-decoration: underline;
 }
