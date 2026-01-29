@@ -1,60 +1,58 @@
-/* Corps de page */
 body {
-   background-image: linear-gradient(to right, rgb(0, 4, 255), rgb(255, 0, 0), rgb(82, 1, 159));
-   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #fff;
-      margin: 0;
-      padding: 0;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    background-image: linear-gradient(to right, rgb(0, 4, 255), rgb(255, 0, 0), rgb(82, 1, 159));
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    position: relative; /* pour les divs absolus */
+    overflow: hidden;   /* supprime la scrollbar */
 }
 
-/* Conteneur principal */
-#main {
-   background-color: rgba(0, 0, 0, 0.6);
-      /* noir transparent */
-      width: 60%;
-      max-width: 900px;
-      padding: 30px 40px;
-   border-radius: 20px;
-   box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
-      backdrop-filter: blur(5px);
-      /* flouté derrière */
-      text-align: center;
+/* Conteneur commun pour les deux divs */
+#main, #second {
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 60%;
+    max-width: 900px;
+    padding: 30px 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.7);
+    backdrop-filter: blur(5px);
+    text-align: center;
+
+    position: absolute;       /* essentiel pour superposer */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scaleY(0); /* caché par défaut */
+    transform-origin: top;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Afficher le div actif */
+#main.active, #second.active {
+    transform: translate(-50%, -50%) scaleY(1);
+    opacity: 1;
+    pointer-events: auto;
 }
 
 /* Titres */
-h1 {
-   font-size: 2.5em;
-   margin-bottom: 10px;
-   color: #00ff99;
-   text-shadow: 1px 1px 5px black;
+h1 { font-size: 2.5em; margin-bottom: 10px; color: #00ff99; text-shadow: 1px 1px 5px black; }
+h3 { margin-top: 30px; color: #ffcc00; }
+h4 { color: #ff6666; }
+p { font-weight: 500; line-height: 1.6; margin: 10px 0; }
+a { color: #00ffff; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.toggle-btn { cursor: pointer; font-size: 2em; display: block; margin-top: 20px; }
+
+
+#second ul {
+    text-align: left;
+    margin: 0 auto 20px auto;
+    padding: 0 20px;
 }
 
-h3 {
-   margin-top: 30px;
-   color: #ffcc00;
-}
-
-h4 {
-   color: #ff6666;
-}
-
-/* Paragraphes */
-p {
-   font-weight: 500;
-   line-height: 1.6;
-   margin: 10px 0;
-}
-
-/* Lien */
-a {
-   color: #00ffff;
-   text-decoration: none;
-}
-
-a:hover {
-   text-decoration: underline;
+#second li {
+    margin-bottom: 8px;
 }
